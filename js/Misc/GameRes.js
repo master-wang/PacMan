@@ -1,6 +1,6 @@
 
 const ALTASRECT = {
-    0: [322, 2, 224, 248],      //背景框蓝色
+    0: [322, 2, 224, 230],      //背景框蓝色
     1: [546, 0, 224, 248],       //背景框白色
     2: [2, 192, 8, 8],//小点
     3: [2, 1, 16, 16],//pacman往左
@@ -1370,25 +1370,25 @@ export default class GameRes {
             str = "准备开始！";
             this.ctx.fillStyle = "#ffff00"
         } else if (idx == 3) {//游戏结束
-            str = "游戏结束";
+            str = "gameover!";
             this.ctx.fillStyle = "#ff0000"
         } else if (idx == 4) {//点击开始
-            str = "点击开始";
+            str = "点击start";
             this.ctx.fillStyle = "#ffffff"
         } else if (idx == 5) {//生命
-            str = "吧唧: ";
+            str = "咕咚: ";
             for (let i = 0; i < data; ++i) {
                 this.renderImage(97, x + 35 + i * 16, y - 4, 1, 1);
             }
             this.ctx.fillStyle = "#ffffff"
         } else if (idx == 6) {//水果
-            str = "点心: ";
+            str = "吃吃: ";
             for (let i = 0; i < data; ++i) {
                 this.renderImage(fruitIdxes[i], x + 35 + i * 16, y - 1, 1, 1);
             }
             this.ctx.fillStyle = "#ffffff"
         } else if (idx == 7) {//级别
-            str = data + "级";
+            str = data + "等级";
             this.ctx.fillStyle = "#ffffff"
         }
         this.ctx.fillText(
